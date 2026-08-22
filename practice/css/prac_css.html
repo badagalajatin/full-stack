@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Basics</title>
+
+    <style>
+        /* Element Selector */
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            margin: 0;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: purple;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: orange;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        nav a:hover {
+            color: black;
+        }
+
+        /* ID Selector */
+        #main-heading {
+            color: darkblue;
+            text-align: center;
+        }
+
+        /* Class Selector */
+        .box {
+            background-color: white;
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 3px solid green;
+            border-radius: 10px;
+        }
+
+        .box h2 {
+            color: red;
+        }
+
+        /* Button */
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: red;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Basics Demo</h1>
+        <p>Learning HTML and CSS</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <h2 id="main-heading">Welcome to My Webpage</h2>
+
+    <div class="box">
+        <h2>About CSS</h2>
+
+        <p>
+            CSS is used to add colors, borders, spacing,
+            fonts, and other styles to HTML webpages.
+        </p>
+
+        <button>Click Me</button>
+    </div>
+
+    <div class="box">
+        <h2>CSS Features</h2>
+
+        <ul>
+            <li>Text Colors</li>
+            <li>Background Colors</li>
+            <li>Borders</li>
+            <li>Margins and Padding</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 CSS Basics</p>
+    </footer>
+
+</body>
+
+</html>
