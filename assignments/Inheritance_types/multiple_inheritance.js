@@ -11,15 +11,11 @@ class Mother {
     }
 }
 
-class Child {
+class Child extends Father {
+    motherProperty() {
+        console.log("Mother's property");
+    }
 }
-
-// Adding methods from both classes
-Object.assign(
-    Child.prototype,
-    Father.prototype,
-    Mother.prototype
-);
 
 let child = new Child();
 
