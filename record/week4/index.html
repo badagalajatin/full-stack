@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Interactive Web Portal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .panel {
+            background: white;
+            padding: 30px;
+            min-height: 180px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px #555;
+        }
+
+        input {
+            padding: 12px;
+            width: 65%;
+            margin: 15px 0;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #e83e8c;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c2185b;
+        }
+
+        #time {
+            font-size: 35px;
+            margin-top: 25px;
+        }
+
+        li {
+            margin: 8px;
+            padding: 8px;
+            background: #eee;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Interactive Web Portal</h1>
+
+        <p>HTML, CSS and JavaScript Project</p>
+
+    </header>
+
+    <div class="container">
+
+        <div class="panel">
+
+            <h2>Greeting Section</h2>
+
+            <input id="userName" placeholder="Enter your name">
+
+            <button onclick="showGreeting()">Greet</button>
+
+            <p id="greeting"></p>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h2>Digital Time</h2>
+
+            <p id="time"></p>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h2>Shopping List</h2>
+
+            <input id="item" placeholder="Enter item">
+
+            <button onclick="addItem()">Add Item</button>
+
+            <ul id="items"></ul>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h2>Background Theme</h2>
+
+            <button onclick="purpleTheme()">Purple</button>
+
+            <button onclick="orangeTheme()">Orange</button>
+
+            <button onclick="nightTheme()">Night</button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function showGreeting() {
+
+            let name = document.getElementById("userName").value;
+
+            document.getElementById("greeting").innerHTML =
+                "Hello " + name + "! Welcome to the portal.";
+
+        }
+
+
+        function updateTime() {
+
+            document.getElementById("time").innerHTML =
+                new Date().toLocaleTimeString();
+
+        }
+
+        setInterval(updateTime, 1000);
+
+        updateTime();
+
+
+        function addItem() {
+
+            let itemName = document.getElementById("item").value;
+
+            if (itemName != "") {
+
+                let li = document.createElement("li");
+
+                li.innerHTML = itemName;
+
+                document.getElementById("items").appendChild(li);
+
+            }
+
+        }
+
+
+        function purpleTheme() {
+
+            document.body.style.background =
+                "linear-gradient(135deg,#667eea,#764ba2)";
+
+        }
+
+
+        function orangeTheme() {
+
+            document.body.style.background =
+                "linear-gradient(135deg,#ff9966,#ff5e62)";
+
+        }
+
+
+        function nightTheme() {
+
+            document.body.style.background =
+                "linear-gradient(135deg,#141e30,#243b55)";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
