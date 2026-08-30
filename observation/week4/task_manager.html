@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Daily Task Manager</title>
+
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background: #fff7ed;
+            display: flex;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .container {
+            background: white;
+            padding: 35px;
+            width: 520px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px #bbb;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ea580c;
+            font-size: 28px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 12px;
+        }
+
+        input {
+            flex: 1;
+            padding: 14px;
+            font-size: 17px;
+            border: 1px solid #bbb;
+            border-radius: 7px;
+        }
+
+        button {
+            background: #ea580c;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c2410c;
+        }
+
+        ol {
+            padding-left: 25px;
+        }
+
+        li {
+            background: #fff7ed;
+            margin: 12px 0;
+            padding: 14px;
+            font-size: 17px;
+            border-radius: 7px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .remove {
+            background: #dc2626;
+            padding: 7px 11px;
+            font-size: 13px;
+        }
+
+        .remove:hover {
+            background: #991b1b;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>📋 Daily Task Manager</h2>
+
+        <div class="input-area">
+
+            <input id="taskInput" placeholder="Write a new task">
+
+            <button onclick="createTask()">Add Task</button>
+
+        </div>
+
+        <ol id="taskList"></ol>
+
+    </div>
+
+
+    <script>
+
+        function createTask() {
+
+            let taskBox = document.getElementById("taskInput");
+
+            let taskText = taskBox.value.trim();
+
+            if (taskText === "") {
+                return;
+            }
+
+            let newTask = document.createElement("li");
+
+            newTask.innerHTML = `
+        <span onclick="completeTask(this)">
+            ${taskText}
+        </span>
+
+        <button class="remove"
+        onclick="deleteTask(this)">
+            Remove
+        </button>
+    `;
+
+            document.getElementById("taskList").appendChild(newTask);
+
+            taskBox.value = "";
+
+        }
+
+
+        function completeTask(element) {
+
+            element.classList.toggle("completed");
+
+        }
+
+
+        function deleteTask(button) {
+
+            button.parentElement.remove();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
