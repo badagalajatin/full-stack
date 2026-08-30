@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Technology Learning Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Technology Learning Page</h1>
+    </header>
+
+    <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Courses</a>
+        <a href="#">Projects</a>
+    </nav>
+
+    <canvas id="drawingArea" width="500" height="220"></canvas>
+
+    <section class="content">
+
+        <div class="box">
+            <h2>Python</h2>
+            <p>Python is used for programming and application development.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="box">
+            <h2>Database</h2>
+            <p>Databases are used to store and manage information.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="box">
+            <h2>AI</h2>
+            <p>Artificial Intelligence helps machines perform intelligent tasks.</p>
+            <button>Explore</button>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Technology Learning Page</p>
+    </footer>
+
+    <script>
+
+        let canvas = document.getElementById("drawingArea");
+        let ctx = canvas.getContext("2d");
+
+        // Draw rectangle
+        ctx.fillStyle = "blue";
+        ctx.fillRect(20, 20, 120, 70);
+
+        // Draw circle
+        ctx.beginPath();
+        ctx.arc(220, 55, 35, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        // Draw line
+        ctx.beginPath();
+        ctx.moveTo(20, 130);
+        ctx.lineTo(300, 130);
+        ctx.stroke();
+
+        // Draw text
+        ctx.font = "28px Arial";
+        ctx.fillText("JATIN", 170, 190);
+
+    </script>
+
+</body>
+
+</html>
