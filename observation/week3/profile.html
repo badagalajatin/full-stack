@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Student Information Generator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e8f0fe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .input-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            width: 380px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 26px;
+            color: #222;
+        }
+
+        input,
+        button {
+            display: block;
+            margin: 12px auto;
+            padding: 12px;
+            width: 90%;
+            font-size: 16px;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        input {
+            border: 1px solid #bbb;
+        }
+
+        button {
+            background: #673ab7;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4527a0;
+        }
+
+        .profile {
+            background: #263238;
+            color: white;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 8px;
+            font-size: 22px;
+            color: #ff9800;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: 110px auto;
+            row-gap: 10px;
+            text-align: left;
+            font-size: 17px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="input-box">
+
+        <h2>Student Information</h2>
+
+        <input type="text" id="studentName" placeholder="Enter Name">
+
+        <input type="text" id="studentRoll" placeholder="Enter Roll Number">
+
+        <input type="text" id="studentDept" placeholder="Enter Department">
+
+        <input type="number" step="0.01" id="studentCgpa" placeholder="Enter CGPA">
+
+        <button id="generateBtn">
+            Create Profile
+        </button>
+
+        <div id="profileContainer"></div>
+
+    </div>
+
+
+    <script>
+
+        // JavaScript Class
+        class StudentDetails {
+
+            constructor(name, roll, department, cgpa) {
+
+                this.name = name;
+                this.roll = roll;
+                this.department = department;
+                this.cgpa = cgpa;
+
+            }
+
+        }
+
+
+        // Event Handling
+        document.getElementById("generateBtn").onclick = function () {
+
+            // Create Student Object
+            const student = new StudentDetails(
+
+                document.getElementById("studentName").value,
+
+                document.getElementById("studentRoll").value,
+
+                document.getElementById("studentDept").value,
+
+                document.getElementById("studentCgpa").value
+
+            );
+
+
+            // Select container
+            const output = document.getElementById("profileContainer");
+
+            output.innerHTML = "";
+
+
+            // Create profile card
+            const profileCard = document.createElement("div");
+
+            profileCard.className = "profile";
+
+
+            // Create heading
+            const heading = document.createElement("h3");
+
+            heading.innerText = "Student Information";
+
+
+            // Create details container
+            const details = document.createElement("div");
+
+            details.className = "details";
+
+
+            // Add student information
+            details.innerHTML = `
+
+                <span>Name</span>
+                <span>: ${student.name}</span>
+
+                <span>Roll No</span>
+                <span>: ${student.roll}</span>
+
+                <span>Department</span>
+                <span>: ${student.department}</span>
+
+                <span>CGPA</span>
+                <span>: ${student.cgpa}</span>
+
+            `;
+
+
+            // Add elements to DOM
+            profileCard.appendChild(heading);
+
+            profileCard.appendChild(details);
+
+            output.appendChild(profileCard);
+
+        };
+
+    </script>
+
+</body>
+
+</html>
