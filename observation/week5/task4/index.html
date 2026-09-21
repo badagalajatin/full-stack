@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM Demonstration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #message {
+            font-size: 24px;
+            margin: 25px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 id="heading">DOM Demonstration</h1>
+
+        <p id="message">
+            This is the original content.
+        </p>
+
+        <button onclick="changeContent()">
+            Change Content
+        </button>
+
+        <button onclick="changeStyle()">
+            Change Style
+        </button>
+
+        <button onclick="changeAttribute()">
+            Change Attribute
+        </button>
+
+        <br><br>
+
+        <img id="studentImage" src="https://via.placeholder.com/200" alt="Original Image" width="200">
+
+    </div>
+
+
+    <script>
+
+        // Change the content of the paragraph
+        function changeContent() {
+
+            document.getElementById("message").textContent =
+                "The content has been changed using JavaScript!";
+        }
+
+
+        // Change the style of the paragraph
+        function changeStyle() {
+
+            const message =
+                document.getElementById("message");
+
+            message.style.color = "blue";
+            message.style.backgroundColor = "lightyellow";
+            message.style.fontSize = "30px";
+            message.style.fontWeight = "bold";
+        }
+
+
+        // Change an HTML attribute
+        function changeAttribute() {
+
+            const image =
+                document.getElementById("studentImage");
+
+            image.setAttribute(
+                "alt",
+                "Image changed using DOM"
+            );
+
+            image.setAttribute(
+                "title",
+                "This image attribute was changed using JavaScript"
+            );
+
+            image.setAttribute(
+                "width",
+                "300"
+            );
+        }
+
+    </script>
+
+</body>
+
+</html>
